@@ -1,7 +1,7 @@
 {
   "name": "elecTryTwo",
   "version": "1.0.0",
-  "description": "��#\u0000 \u0000e\u0000l\u0000e\u0000c\u0000D\u0000e\u0000m\u0000o\u0000\r\u0000 \u0000",
+  "description": "elecTryTwo",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
