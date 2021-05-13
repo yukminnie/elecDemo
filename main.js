@@ -1,8 +1,10 @@
 // app 是管理应用程序生命周期用的
 // BrowserWindow 是创建还有控制应用窗口用的 ..
+// ipcMain 主进程监听
 const {
     app,
-    BrowserWindow
+    BrowserWindow,
+    ipcMain
 } = require('electron')
 
 const path = require('path')
@@ -14,6 +16,13 @@ require('electron-reload')(__dirname, {
 
 // 暂时设置成全局变量，防止垃圾回收
 let win
+
+
+// ipcMain 监听
+ipcMain.on('greet', (event, args) => {
+    console.log(args)
+})
+
 
 // 定义事件
 const createWindow = () => {
