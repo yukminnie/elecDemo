@@ -15,6 +15,10 @@
         ipcRenderer.send('greet', {
             message: "hello"
         })
+
+        ipcRenderer.on('greet', (event, args) => {
+            console.log(args)
+        })
     </script>
 </body>
 </html>

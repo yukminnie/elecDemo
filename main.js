@@ -21,7 +21,12 @@ let win
 // ipcMain 监听
 ipcMain.on('greet', (event, args) => {
     console.log(args)
+    // 回信
+    event.sender.send('greet', {
+        message: '已经收到消息'
+    })
 })
+
 
 
 // 定义事件
