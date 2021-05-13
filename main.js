@@ -5,6 +5,13 @@ const {
     BrowserWindow
 } = require('electron')
 
+const path = require('path')
+
+// 自动重载应用
+require('electron-reload')(__dirname, {
+    electron: path.join(__dirname, 'node_modules', '.bin', 'electron')
+})
+
 // 暂时设置成全局变量，防止垃圾回收
 let win
 
@@ -19,6 +26,6 @@ const createWindow = () => {
         })
         win.loadURL(`file://${__dirname}/main.html`)
     }
-    
+
 // 绑定事件
 app.on('ready', createWindow)
